@@ -7,6 +7,10 @@ import Cart from "./pages/cart";
 import About from "./pages/About";
 import Products from "./pages/Products";
 import ErrorPage from "./pages/ErrorPage";
+import Navbar from './layouts/Navbar.jsx';
+import Footer from './layouts/Footer.jsx';
+import Stack from 'react-bootstrap/Stack';
+
 
 
 
@@ -44,9 +48,18 @@ const router = createBrowserRouter([
 
 function App() {
 
-  return <>
-   <RouterProvider router={router} />
-  </>
-} 
+  return (
+    <div body class="d-flex flex-column h-100">
+      <Stack gap={3}>
+    <Navbar />
+    <main className="flex-shrink-0">
+      <div className="container">
+      <RouterProvider router={router} />
+    </div>
+</main>
+        <Footer />
+        </Stack>
+  </div>
+)} 
 
 export default App
